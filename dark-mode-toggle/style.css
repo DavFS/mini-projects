@@ -1,0 +1,52 @@
+:root {
+  --text-color: #000;
+  --bg: #eaeaea;
+  transition: .3s;
+}
+
+:root.dark-mode {
+  --bg: #333;
+  --text-color: #eaeaea;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  background: var(--bg);
+}
+
+
+.toggle-track {
+  display: flex;
+  align-items: center;
+  
+  width: 180px;
+  aspect-ratio: 2/1;
+  padding: 0% 3%;
+  border-radius: 90px;
+  
+  transition: .3s;
+  
+  background: #d3d3d3;
+}
+
+.toggle-point {
+  width: 45%;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  
+  transition: .3s;
+  
+  background: white;
+}
+
+.toggle-wrapper>input:checked+.toggle-track {
+  background: rgb(77, 109, 254);
+}
+
+.toggle-wrapper>input:checked+.toggle-track>.toggle-point {
+  /* 100*100/45-100=122.2 */
+  transform: translateX(122.2%)
+}
